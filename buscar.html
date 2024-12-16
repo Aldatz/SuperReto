@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar - Intercambio de Habilidades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding-top: 100px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .navbar {
+            background-color: #ff6600;
+            position: fixed;
+            /* Fija el navbar en la parte superior */
+            top: 0;
+            /* Pegado a la parte superior */
+            left: 0;
+            /* Alineado al borde izquierdo */
+            width: 100%;
+            /* Ocupa todo el ancho de la pantalla */
+            z-index: 1000;
+            /* Asegura que esté por encima de otros elementos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra para un mejor efecto visual */
+        }
+
+
+        .navbar a {
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffd700;
+            /* Color dorado al hacer hover */
+        }
+
+        .navbar .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .navbar .navbar-nav .nav-item {
+            margin: 0 15px;
+        }
+
+        .navbar .navbar-nav .nav-item-right {
+            margin-left: auto;
+        }
+
+        .nav-item-right i {
+            margin-right: 8px;
+        }
+
+        .credits-display {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-left: 5px;
+        }
+
+        /* Estilo para las tarjetas redondeadas */
+        .rounded-card {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff6600;
+            /* Añadir borde naranja */
+        }
+
+        .rounded-card img {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .card-content {
+            flex-grow: 1;
+        }
+
+        .credits,
+        .stars {
+            text-align: right;
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+
+        .btn-recargar {
+            background-color: #ff6600;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-recargar i {
+            margin-right: 5px;
+        }
+
+        /* Espacio entre el número de créditos y el texto */
+        .credits-display {
+            margin-right: 10px;
+            /* Añadir espacio entre los créditos y el botón */
+        }
+
+        /* Estilo para la imagen del logo en el navbar */
+        .navbar-brand img.logo {
+            height: 100px;
+            /* Ajusta el tamaño del logo */
+            /* Ajusta el tamaño de la imagen */
+            border-radius: 50%;
+            /* Hace la imagen redonda */
+            border: 5px solid white;
+            /* Añade un borde blanco */
+            padding: 5px;
+            /* Agrega un poco de espacio entre la imagen y el borde */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Imagen como marca en lugar de texto -->
+            <a class="navbar-brand" href="index.html">
+                <img src="src/images/SkillSwap.png" alt="Intercambio Habilidades" class="logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buscar.html">Buscar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <!-- Créditos y botón de recarga en el navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item nav-item-right">
+                        <a class="nav-link btn-recargar" href="recargar.html">
+                            <span class="credits-display" id="creditos-display">
+                                0
+                            </span>
+                            <i class="fas fa-coins"></i> Recargar Créditos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Búsqueda -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Busca Habilidades</h2>
+        <form class="mb-4">
+            <input type="text" class="form-control" placeholder="¿Qué habilidad necesitas?">
+        </form>
+        <div>
+            <!-- Ejemplo de tarjetas -->
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Juan Pérez" width="100">
+                <div class="card-content">
+                    <h5>Juan Pérez</h5>
+                    <p>Clases de Guitarra (Principiante)</p>
+                </div>
+                <div class="credits">20 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Ana Gómez" width="100">
+                <div class="card-content">
+                    <h5>Ana Gómez</h5>
+                    <p>Clases de Pintura (Básico)</p>
+                </div>
+                <div class="credits">15 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Carlos Sánchez" width="100">
+                <div class="card-content">
+                    <h5>Carlos Sánchez</h5>
+                    <p>Clases de Fotografía (Básico)</p>
+                </div>
+                <div class="credits">25 créditos/hora</div>
+                <div class="stars">⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Laura Fernández" width="100">
+                <div class="card-content">
+                    <h5>Laura Fernández</h5>
+                    <p>Clases de Cocina (Intermedio)</p>
+                </div>
+                <div class="credits">30 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Miguel Díaz" width="100">
+                <div class="card-content">
+                    <h5>Miguel Díaz</h5>
+                    <p>Clases de Programación (Principiante)</p>
+                </div>
+                <div class="credits">20 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Isabel Ruiz" width="100">
+                <div class="card-content">
+                    <h5>Isabel Ruiz</h5>
+                    <p>Clases de Yoga (Avanzado)</p>
+                </div>
+                <div class="credits">50 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="David Torres" width="100">
+                <div class="card-content">
+                    <h5>David Torres</h5>
+                    <p>Clases de Matemáticas (Avanzado)</p>
+                </div>
+                <div class="credits">50 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="María López" width="100">
+                <div class="card-content">
+                    <h5>María López</h5>
+                    <p>Clases de Español (Conversación)</p>
+                </div>
+                <div class="credits">25 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Pedro Martínez" width="100">
+                <div class="card-content">
+                    <h5>Pedro Martínez</h5>
+                    <p>Clases de Historia (Intermedio)</p>
+                </div>
+                <div class="credits">35 créditos/hora</div>
+                <div class="stars">⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Elena Díaz" width="100">
+                <div class="card-content">
+                    <h5>Elena Díaz</h5>
+                    <p>Clases de Historia del Arte (Avanzado)</p>
+                </div>
+                <div class="credits">50 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="José Martínez" width="100">
+                <div class="card-content">
+                    <h5>José Martínez</h5>
+                    <p>Clases de Pintura Digital (Avanzado)</p>
+                </div>
+                <div class="credits">60 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sara Ruiz" width="100">
+                <div class="card-content">
+                    <h5>Sara Ruiz</h5>
+                    <p>Clases de Música (Intermedio)</p>
+                </div>
+                <div class="credits">30 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/13.jpg" alt="Juan Martínez" width="100">
+                <div class="card-content">
+                    <h5>Juan Martínez</h5>
+                    <p>Clases de Filosofía (Avanzado)</p>
+                </div>
+                <div class="credits">50 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/14.jpg" alt="Clara Sánchez" width="100">
+                <div class="card-content">
+                    <h5>Clara Sánchez</h5>
+                    <p>Clases de Danza (Intermedio)</p>
+                </div>
+                <div class="credits">30 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Raúl Fernández" width="100">
+                <div class="card-content">
+                    <h5>Raúl Fernández</h5>
+                    <p>Clases de Diseño Gráfico (Principiante)</p>
+                </div>
+                <div class="credits">15 créditos/hora</div>
+                <div class="stars">⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/16.jpg" alt="Verónica Díaz" width="100">
+                <div class="card-content">
+                    <h5>Verónica Díaz</h5>
+                    <p>Clases de Marketing Digital (Avanzado)</p>
+                </div>
+                <div class="credits">50 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="Antonio Pérez" width="100">
+                <div class="card-content">
+                    <h5>Antonio Pérez</h5>
+                    <p>Clases de Tecnología (Intermedio)</p>
+                </div>
+                <div class="credits">30 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="rounded-card">
+                <img src="https://randomuser.me/api/portraits/women/18.jpg" alt="Patricia Gómez" width="100">
+                <div class="card-content">
+                    <h5>Patricia Gómez</h5>
+                    <p>Clases de Escritura Creativa (Intermedio)</p>
+                </div>
+                <div class="credits">25 créditos/hora</div>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contáctanos | Sobre Nosotros | Redes Sociales</p>
+    </footer>
+
+    <!-- Incluir el archivo globals.js -->
+    <script src="globals.js"></script>
+
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Llamamos a la función de globals.js para actualizar los créditos cuando se carga la página
+        window.onload = function () {
+            actualizarCreditosEnPagina();
+        }
+    </script>
+</body>
+
+</html>

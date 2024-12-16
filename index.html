@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Intercambio de Habilidades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding-top: 100px;
+        }
+
+        .hero {
+            background: none;
+            color: black;
+            text-align: center;
+            padding: 200px 20px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .navbar {
+            background-color: #ff6600;
+            position: fixed;
+            /* Fija el navbar en la parte superior */
+            top: 0;
+            /* Pegado a la parte superior */
+            left: 0;
+            /* Alineado al borde izquierdo */
+            width: 100%;
+            /* Ocupa todo el ancho de la pantalla */
+            z-index: 1000;
+            /* Asegura que esté por encima de otros elementos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra para un mejor efecto visual */
+        }
+
+
+        .navbar a {
+            color: white;
+        }
+
+        .navbar .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .navbar .navbar-nav .nav-item {
+            margin: 0 15px;
+        }
+
+        .navbar .navbar-nav .nav-item-right {
+            margin-left: auto;
+        }
+
+        .nav-item-right i {
+            margin-right: 8px;
+        }
+
+        .credits-display {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-left: 5px;
+        }
+
+        /* Centrar el título de la sección de reseñas */
+        .reviews-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para las tarjetas de reseñas */
+        .review-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border: 2px solid #ff6600;
+        }
+
+        .review-card img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .review-card .review-content {
+            flex: 1;
+        }
+
+        .review-card .review-content h5 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .review-card .review-content p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .review-card .review-content .rating {
+            color: #ff9900;
+        }
+
+        /* Estilo para la sección Hero */
+        .hero {
+            background: none;
+            padding: 60px 20px;
+            text-align: center;
+            color: black;
+        }
+
+        /* Estilo para la imagen del logo en el navbar */
+        .navbar-brand img.logo {
+            height: 100px;
+            /* Ajusta el tamaño de la imagen */
+            border-radius: 100%;
+            /* Hace la imagen redonda */
+            border: 5px solid white;
+            /* Añade un borde blanco */
+            padding: 5px;
+            /* Agrega un poco de espacio entre la imagen y el borde */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Imagen como marca en lugar de texto -->
+            <a class="navbar-brand" href="index.html">
+                <img src="src/images/SkillSwap.png" alt="Intercambio Habilidades" class="logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buscar.html">Buscar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <!-- Créditos y botón de recarga en el navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item nav-item-right">
+                        <a class="nav-link btn-recargar" href="recargar.html">
+                            <span class="credits-display" id="creditos-display">
+                                0
+                            </span>
+                            <i class="fas fa-coins"></i> Recargar Créditos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <h1>Intercambia Habilidades, Construye Comunidad</h1>
+        <p>Conecta con personas, aprende nuevas habilidades y comparte lo que sabes.</p>
+    </section>
+
+    <!-- Sección de Reseñas -->
+    <div class="container reviews-section">
+        <h2>Reseñas Destacadas</h2>
+
+        <!-- Reseña 1 -->
+        <div class="review-card">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Juan Pérez">
+            <div class="review-content">
+                <h5>Juan Pérez</h5>
+                <p>"Gracias a esta plataforma, aprendí a tocar la guitarra en poco tiempo. ¡Increíble experiencia!"</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+
+        <!-- Reseña 2 -->
+        <div class="review-card">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Ana Gómez">
+            <div class="review-content">
+                <h5>Ana Gómez</h5>
+                <p>"Intercambié clases de dibujo por ayuda en jardinería. Muy recomendado."</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+
+        <!-- Reseña 3 -->
+        <div class="review-card">
+            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Carlos Sánchez">
+            <div class="review-content">
+                <h5>Carlos Sánchez</h5>
+                <p>"La experiencia fue increíble. Aprendí mucho y conocí gente genial. ¡Muy recomendado!"</p>
+                <div class="rating">⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contáctanos | Sobre Nosotros | Redes Sociales</p>
+    </footer>
+
+    <script src="globals.js"></script> <!-- Asegúrate de que el archivo global.js esté correctamente vinculado -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Función para actualizar el contador de créditos en el navbar
+        function actualizarCreditoUI() {
+            document.getElementById("creditos-display").textContent = obtenerCreditos();
+        }
+
+        // Función que se ejecuta al cargar la página
+        window.onload = function () {
+            actualizarCreditoUI();
+        }
+
+        // Función para manejar la selección de opción de recarga
+        let selectedCredit; // Para almacenar la cantidad de créditos seleccionada
+
+        function selectOption(element, cantidad) {
+            // Eliminar clase "selected" de todas las opciones
+            const options = document.querySelectorAll('.credit-option');
+            options.forEach(option => option.classList.remove('selected'));
+
+            // Agregar la clase "selected" a la opción seleccionada
+            element.classList.add('selected');
+
+            // Almacenar la cantidad seleccionada
+            selectedCredit = cantidad;
+        }
+
+        // Función para realizar la recarga
+        function recargar() {
+            if (typeof selectedCredit === 'undefined') {
+                const modalError = new bootstrap.Modal(document.getElementById('modalError'));
+                modalError.show();
+                return;
+            }
+
+            // Actualizar los créditos y mostrarlos en el UI
+            const nuevosCreditos = obtenerCreditos() + selectedCredit;
+            actualizarCreditos(nuevosCreditos);
+            actualizarCreditoUI();
+
+            // Mostrar mensaje de confirmación
+            const mensajePrevio = `¿Estás seguro de que quieres recargar ${selectedCredit} créditos?`;
+            const mensajeActual = `Recargarás ${selectedCredit} créditos.`;
+            document.getElementById('mensaje-previo').textContent = mensajePrevio;
+            document.getElementById('mensaje-actual').textContent = mensajeActual;
+
+            const modalConfirmacion = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
+            modalConfirmacion.show();
+        }
+    </script>
+</body>
+
+</html>
