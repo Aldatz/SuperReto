@@ -137,10 +137,10 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item nav-item-right">
                         <a class="nav-link btn-recargar" href="recargar.html">
-                            <span class="credits-display" id="creditos-display">
+                            <span class="credits-display" id="KnowCoins-display">
                                 0
                             </span>
-                            <i class="fas fa-coins"></i> Recargar Créditos
+                            <i class="fas fa-coins"></i> Recargar KnowCoins
                         </a>
                     </li>
                 </ul>
@@ -175,12 +175,12 @@
     <script src="globals.js"></script>
     <script>
         function actualizarCreditoUI() {
-            const creditos = obtenerCreditos(); // Obtener los créditos desde globals.js
-            document.getElementById("creditos-display").textContent = `${creditos} `;
+            const KnowCoins = obtenerKnowCoins(); // Obtener los KnowCoins desde globals.js
+            document.getElementById("KnowCoins-display").textContent = `${KnowCoins} `;
         }
 
         window.onload = function () {
-            actualizarCreditoUI(); // Actualiza los créditos al cargar la página
+            actualizarCreditoUI(); // Actualiza los KnowCoins al cargar la página
         };
     </script>
 </body>

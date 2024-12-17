@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recargar Créditos - Intercambio de Habilidades</title>
+    <title>Recargar KnowCoins - Intercambio de Habilidades</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -147,7 +147,7 @@
 
         .credits-display {
             margin-right: 10px;
-            /* Añadir espacio entre los créditos y el botón */
+            /* Añadir espacio entre los KnowCoins y el botón */
         }
 
         /* Estilo para la imagen del logo en el navbar */
@@ -188,14 +188,14 @@
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
-                <!-- Créditos y botón de recarga en el navbar -->
+                <!-- KnowCoins y botón de recarga en el navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item nav-item-right">
                         <a class="nav-link btn-recargar" href="recargar.html">
-                            <span class="credits-display" id="creditos-display">
+                            <span class="credits-display" id="KnowCoins-display">
                                 0
                             </span>
-                            <i class="fas fa-coins"></i> Recargar Créditos
+                            <i class="fas fa-coins"></i> Recargar KnowCoins
                         </a>
                     </li>
                 </ul>
@@ -203,29 +203,29 @@
         </div>
     </nav>
 
-    <!-- Recarga de Créditos -->
+    <!-- Recarga de KnowCoins -->
     <div class="container my-5">
-        <h2 class="text-center mb-4">Recarga Créditos</h2>
+        <h2 class="text-center mb-4">Recarga KnowCoins</h2>
         <div class="credit-options-container">
-            <!-- Opción 45 créditos -->
+            <!-- Opción 45 KnowCoins -->
             <div class="credit-option" onclick="selectOption(this, 45)">
                 <span><i class="fas fa-coins"></i> 45</span>
                 <p>5€</p>
             </div>
 
-            <!-- Opción 100 créditos -->
+            <!-- Opción 100 KnowCoins -->
             <div class="credit-option" onclick="selectOption(this, 100)">
                 <span><i class="fas fa-coins"></i> 100</span>
                 <p>10€</p>
             </div>
 
-            <!-- Opción 300 créditos -->
+            <!-- Opción 300 KnowCoins -->
             <div class="credit-option" onclick="selectOption(this, 300)">
                 <span><i class="fas fa-coins"></i> 300</span>
                 <p>25€</p>
             </div>
 
-            <!-- Opción 1500 créditos -->
+            <!-- Opción 1500 KnowCoins -->
             <div class="credit-option" onclick="selectOption(this, 1500)">
                 <span><i class="fas fa-coins"></i> 1500</span>
                 <p>100€</p>
@@ -284,9 +284,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="globals.js"></script>
     <script>
-        // Función para actualizar el contador de créditos en el navbar
+        // Función para actualizar el contador de KnowCoins en el navbar
         function actualizarCreditoUI() {
-            document.getElementById("creditos-display").textContent = obtenerCreditos();
+            document.getElementById("KnowCoins-display").textContent = obtenerKnowCoins();
         }
 
         // Función que se ejecuta al cargar la página
@@ -315,14 +315,14 @@
                 return;
             }
 
-            // Actualizar los créditos y mostrarlos en el UI
-            const nuevosCreditos = obtenerCreditos() + selectedCredit;
-            actualizarCreditos(nuevosCreditos);
+            // Actualizar los KnowCoins y mostrarlos en el UI
+            const nuevosKnowCoins = obtenerKnowCoins() + selectedCredit;
+            actualizarKnowCoins(nuevosKnowCoins);
             actualizarCreditoUI();
 
             // Mostrar mensaje de confirmación
-            const mensajePrevio = `¿Estás seguro de que quieres recargar ${selectedCredit} créditos?`;
-            const mensajeActual = `Recargarás ${selectedCredit} créditos.`;
+            const mensajePrevio = `¿Estás seguro de que quieres recargar ${selectedCredit} KnowCoins?`;
+            const mensajeActual = `Recargarás ${selectedCredit} KnowCoins.`;
             document.getElementById('mensaje-previo').textContent = mensajePrevio;
             document.getElementById('mensaje-actual').textContent = mensajeActual;
 

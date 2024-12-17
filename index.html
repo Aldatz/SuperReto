@@ -14,16 +14,125 @@
             background-color: #f5f5f5;
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            height: 320vh;
             padding-top: 100px;
         }
 
+        /* Estilos para la Sección Hero */
         .hero {
-            background: none;
-            color: black;
+            position: relative;
+            height: 100vh;
+            /* Ajusta la altura para que ocupe toda la pantalla */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 200px 20px;
+            color: #fff;
+            /* Color del texto */
         }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fondo negro transparente */
+            z-index: 1;
+        }
+
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 2;
+            margin: 0 20px;
+            color: white;
+            /* Espaciado horizontal */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-top: 10px;
+        }
+
+        /* Estilos para las imágenes en las secciones inferiores */
+        .container img.img-fluid {
+            width: 100%;
+            height: 250px;
+            /* Ajusta la altura de todas las imágenes */
+            object-fit: cover;
+            /* Hace que las imágenes cubran el área sin deformarse */
+            border-radius: 8px;
+            /* Opcional: esquinas redondeadas */
+        }
+
+        /* Estilos para la Sección Beneficios */
+        .container .row .col-md-4 {
+            margin-bottom: 30px;
+            /* Espaciado entre columnas */
+        }
+
+        .container h5 {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .container p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Ajustes adicionales para las reseñas */
+        .reviews-section {
+            margin-top: 50px;
+        }
+
+        .review-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .review-content h5 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .review-content p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .rating {
+            font-size: 1.2rem;
+            color: #ffcc00;
+        }
+
 
         footer {
             background: #333;
@@ -170,14 +279,14 @@
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
-                <!-- Créditos y botón de recarga en el navbar -->
+                <!-- KnowCoins y botón de recarga en el navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item nav-item-right">
                         <a class="nav-link btn-recargar" href="recargar.html">
-                            <span class="credits-display" id="creditos-display">
+                            <span class="credits-display" id="KnowCoins-display">
                                 0
                             </span>
-                            <i class="fas fa-coins"></i> Recargar Créditos
+                            <i class="fas fa-coins"></i> Recargar KnowCoins
                         </a>
                     </li>
                 </ul>
@@ -188,10 +297,65 @@
 
 
     <!-- Sección Hero -->
-    <section class="hero">
+    <section class="hero"
+        style="background-image: url('src/images/intercambio.jpg'); background-size: cover; background-position: center;">
         <h1>Intercambia Habilidades, Construye Comunidad</h1>
         <p>Conecta con personas, aprende nuevas habilidades y comparte lo que sabes.</p>
     </section>
+
+    <!-- Sección Cómo Funciona -->
+    <div class="container my-5">
+        <h2 class="text-center">¿Cómo Funciona Skill Swap?</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="src/images/manosBonbilla.jpg" alt="Paso 1" class="img-fluid mb-3">
+                <h5>Regístrate</h5>
+                <p>Crea tu cuenta en minutos y configura tu perfil indicando tus habilidades y lo que te interesa
+                    aprender.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="src/images/intercambio_2.jpg" alt="Paso 2" class="img-fluid mb-3">
+                <h5>Conecta</h5>
+                <p>Busca usuarios con habilidades que te interesen y ofréceles las tuyas a cambio.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="src/images/intercambio.jpeg" alt="Paso 3" class="img-fluid mb-3">
+                <h5>Intercambia</h5>
+                <p>Utiliza KnowCoins para organizar intercambios de habilidades de forma justa y segura.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Beneficios -->
+    <div class="container my-5">
+        <h2 class="text-center">Beneficios de Usar Skill Swap</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="src/images/habilidades-comunicativas.avif" alt="Construye Comunidad" class="img-fluid mb-3">
+                <h5>Construye Comunidad</h5>
+                <p>Conoce personas con intereses similares y construye relaciones valiosas.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="src/images/top-view-paper-people-cut-out-notebook.jpg" alt="Aprende y Comparte"
+                    class="img-fluid mb-3">
+                <h5>Aprende y Comparte</h5>
+                <p>Expande tus conocimientos mientras ayudas a otros a hacer lo mismo.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="src/images/dinero.jpg" alt="Intercambios Justos" class="img-fluid mb-3">
+                <h5>Intercambios Justos</h5>
+                <p>El sistema de KnowCoins asegura un intercambio equitativo para todos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Llamado a la Acción -->
+    <div class="container text-center my-5">
+        <h2>¡Empieza Hoy Mismo!</h2>
+        <p>Regístrate y comienza a intercambiar tus habilidades con personas de todo el mundo.</p>
+        <a href="registro.html" class="btn btn-primary btn-lg"
+            style="background-color: #ff6600; border: none;">Regístrate Ahora</a>
+    </div>
 
     <!-- Sección de Reseñas -->
     <div class="container reviews-section">
@@ -228,6 +392,8 @@
         </div>
     </div>
 
+
+
     <!-- Footer -->
     <footer>
         <p>Contáctanos | Sobre Nosotros | Redes Sociales</p>
@@ -237,9 +403,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Función para actualizar el contador de créditos en el navbar
+        // Función para actualizar el contador de KnowCoins en el navbar
         function actualizarCreditoUI() {
-            document.getElementById("creditos-display").textContent = obtenerCreditos();
+            document.getElementById("KnowCoins-display").textContent = obtenerKnowCoins();
         }
 
         // Función que se ejecuta al cargar la página
@@ -248,7 +414,7 @@
         }
 
         // Función para manejar la selección de opción de recarga
-        let selectedCredit; // Para almacenar la cantidad de créditos seleccionada
+        let selectedCredit; // Para almacenar la cantidad de KnowCoins seleccionada
 
         function selectOption(element, cantidad) {
             // Eliminar clase "selected" de todas las opciones
@@ -270,14 +436,14 @@
                 return;
             }
 
-            // Actualizar los créditos y mostrarlos en el UI
-            const nuevosCreditos = obtenerCreditos() + selectedCredit;
-            actualizarCreditos(nuevosCreditos);
+            // Actualizar los KnowCoins y mostrarlos en el UI
+            const nuevosKnowCoins = obtenerKnowCoins() + selectedCredit;
+            actualizarKnowCoins(nuevosKnowCoins);
             actualizarCreditoUI();
 
             // Mostrar mensaje de confirmación
-            const mensajePrevio = `¿Estás seguro de que quieres recargar ${selectedCredit} créditos?`;
-            const mensajeActual = `Recargarás ${selectedCredit} créditos.`;
+            const mensajePrevio = `¿Estás seguro de que quieres recargar ${selectedCredit} KnowCoins?`;
+            const mensajeActual = `Recargarás ${selectedCredit} KnowCoins.`;
             document.getElementById('mensaje-previo').textContent = mensajePrevio;
             document.getElementById('mensaje-actual').textContent = mensajeActual;
 
